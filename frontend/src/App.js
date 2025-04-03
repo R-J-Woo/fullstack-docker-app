@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     axios.get('/api/values')
     .then(response => {
-      console.log('response!!!!!!!', response);
+      console.log('response', response);
       setLists(response.data)
     })
   }, [])
@@ -27,7 +27,7 @@ function App() {
     axios.post('/api/value', { value: value })
     .then(response => {
       if (response.data.success) {
-        console.log('response!!!!!!!', response);
+        console.log('response', response);
         setLists([...lists, response.data])
         setValue("");
       } else {
